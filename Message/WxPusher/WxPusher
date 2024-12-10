@@ -1,0 +1,12 @@
+# -*- encoding: utf-8 -*-
+'''
+@File    :   WxPusher
+@Time    :   2024/12/10 18:56:51
+@Author  :   chaopaoo12 
+@Version :   1.0
+@Contact :   chaopaoo12@hotmail.com
+'''
+
+# here put the import lib
+
+import requests
