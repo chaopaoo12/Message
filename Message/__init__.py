@@ -10,5 +10,5 @@
 # here put the import lib
 
 from Message.utils import build_head, build_table, build_email, build_json
-from Message.Email.email import send_email
+from Message.email.email import send_email
 from Message.wechat.wechat_qa import send_actionnotice
