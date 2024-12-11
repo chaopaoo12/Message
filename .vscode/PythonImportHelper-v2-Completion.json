@@ -1,0 +1,131 @@
+[
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "Header",
+        "importPath": "email.header",
+        "description": "email.header",
+        "isExtraImport": true,
+        "detail": "email.header",
+        "documentation": {}
+    },
+    {
+        "label": "Imbox",
+        "importPath": "imbox",
+        "description": "imbox",
+        "isExtraImport": true,
+        "detail": "imbox",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "send_email",
+        "kind": 2,
+        "importPath": "Message.Email.email",
+        "description": "Message.Email.email",
+        "peekOfCode": "def send_email(mail_title, msg, date, smtpserver, smtpport, msg_from, msg_to, passwd):\n    smtpserver = smtpserver\n    smtpport = smtpport\n    msg_from = msg_from                            #发送方邮箱\n    passwd = passwd                                 #填入发送方邮箱的授权码\n    msg_to = msg_to                                 #收件人邮箱\n    subject = mail_title                           #主题\n    if isinstance(msg, str):\n        html = msg + ' wrong in {date}'.format(date= date)\n    else:",
+        "detail": "Message.Email.email",
+        "documentation": {}
+    },
+    {
+        "label": "reademail",
+        "kind": 2,
+        "importPath": "Message.Email.email",
+        "description": "Message.Email.email",
+        "peekOfCode": "def reademail(mail_title, smtpserver, msg_from, passwd, seen=False):\n    with Imbox(smtpserver, msg_from, passwd, ssl=True) as imbox:\n        all_inbox_messages = imbox.messages(folder='&UXZO1mWHTvZZOQ-/Report', unread=True)\n        for uid, message in all_inbox_messages:\n            if message.subject == mail_title:\n                htmlbody=message.body['html']\n                if seen == True:\n                    imbox.mark_seen(uid)\n                return(htmlbody)",
+        "detail": "Message.Email.email",
+        "documentation": {}
+    },
+    {
+        "label": "send_actionnotice",
+        "kind": 2,
+        "importPath": "Message.Wechat.wechat_qa",
+        "description": "Message.Wechat.wechat_qa",
+        "peekOfCode": "def send_actionnotice(strategy_id,\n                      account,\n                      code,\n                      direction,\n                      offset,\n                      volume,\n                      user,\n                      price=None,\n                      now = None):\n    try:",
+        "detail": "Message.Wechat.wechat_qa",
+        "documentation": {}
+    },
+    {
+        "label": "build_head",
+        "kind": 2,
+        "importPath": "Message.utils",
+        "description": "Message.utils",
+        "peekOfCode": "def build_head():\n    head = \\\n        \"\"\"\n        <head>\n            <meta charset=\"utf-8\">\n            <STYLE TYPE=\"text/css\" MEDIA=screen>\n                table.dataframe {\n                    border-collapse: collapse;\n                    border: 2px solid #a19da2;\n                    /*居中显示整个表格*/",
+        "detail": "Message.utils",
+        "documentation": {}
+    },
+    {
+        "label": "build_table",
+        "kind": 2,
+        "importPath": "Message.utils",
+        "description": "Message.utils",
+        "peekOfCode": "def build_table(data, title, sub_tile = None):\n    df_html = data.to_html(escape=False)\n    body = \\\n        \"\"\"\n        <body>\n        <div align=\"center\" class=\"header\">\n            <!--标题部分的信息-->\n            <h1 align=\"center\">{title}</h1>\n            <h2 align=\"center\">{sub_tile}</h2>\n        </div>",
+        "detail": "Message.utils",
+        "documentation": {}
+    },
+    {
+        "label": "build_email",
+        "kind": 2,
+        "importPath": "Message.utils",
+        "description": "Message.utils",
+        "peekOfCode": "def build_email(head, body, *args):\n    html_msg = \"<html>\" + head + body\n    for i in args:\n        html_msg += i\n    html_msg = html_msg + \"</html>\"\n    html_msg = html_msg.replace('\\n','')\n    return (html_msg)\ndef build_json(data):\n    import json\n    json_data = json.dumps(data)",
+        "detail": "Message.utils",
+        "documentation": {}
+    },
+    {
+        "label": "build_json",
+        "kind": 2,
+        "importPath": "Message.utils",
+        "description": "Message.utils",
+        "peekOfCode": "def build_json(data):\n    import json\n    json_data = json.dumps(data)\n    return (json_data)",
+        "detail": "Message.utils",
+        "documentation": {}
+    }
+]
